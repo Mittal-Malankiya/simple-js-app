@@ -24,3 +24,5 @@ let pokemonRepository = (function() {
     console.log(`Level: ${pokemon.level}`);
     console.log('  ');
   });
+
+

@@ -18,11 +18,12 @@ let pokemonRepository = (function() {
   };
   })();
   pokemonRepository.getAll().forEach(function(pokemon, index) {
-    console.log(`Pokemon at index ${index}:`);
-    console.log(`Name: ${pokemon.name}`);
-    console.log(`Type: ${pokemon.type}`);
-    console.log(`Level: ${pokemon.level}`);
-    console.log('  ');
+    console.log(`
+    Pokemon at index ${index}:
+    Name: ${pokemon.name}
+    Type: ${pokemon.type}
+    Level: ${pokemon.level}
+    `);
   });
 
 

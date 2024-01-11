@@ -17,7 +17,7 @@ let pokemonRepository = (function() {
     getAll: getAll
   };
   })();
-  pokemonList.forEach(function(pokemon, index) {
+  pokemonRepository.getAll().forEach(function(pokemon, index) {
     console.log(`Pokemon at index ${index}:`);
     console.log(`Name: ${pokemon.name}`);
     console.log(`Type: ${pokemon.type}`);

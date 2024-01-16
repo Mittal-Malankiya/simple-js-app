@@ -15,10 +15,7 @@
     function showDetails(pokemon) {
       console.log('Pokemon Details:', pokemon);
     }
-   let pokemonArray = [
-    { name: 'Bulbasaur', type: ['grass', 'poison'], level: 7 },
-    { name: 'Charmander', type: ['Fire'], level: 7 },
-    { name: 'Squirtle', type: ['Water'], level: 8 },];
+   let pokemonArray = [];
   
     pokemonArray.forEach(pokemon => {
         addListItem(pokemon);

@@ -43,7 +43,11 @@
         console.error(e);
       });
     }
-
+    function showDetails(pokemon) {
+      pokemonRepository.loadDetails(pokemon).then(function () {
+        console.log(pokemon);
+      });
+    }
    pokemonList.forEach(pokemon => {
         addListItem(pokemon);
     });
@@ -53,7 +57,11 @@
         addListItem: addListItem,
         showDetails:showDetails
     };
-  }();
+
+};
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
-
-
+  })

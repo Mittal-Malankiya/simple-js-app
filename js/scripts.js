@@ -1,3 +1,7 @@
+let modalContainer = document.createElement('div');
+modalContainer.classList.add('modal-container');
+document.body.appendChild(modalContainer);
+
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
@@ -46,8 +50,54 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      openModal(pokemon);
     });
+  }
+
+  function openModal(pokemon) {
+    // Clear existing content
+    modalContainer.innerHTML = '';
+
+    // Create modal content
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+
+    let closeButton = document.createElement('span');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.addEventListener('click', closeModal);
+
+    let nameElement = document.createElement('h2');
+    nameElement.innerText = pokemon.name;
+
+    let heightElement = document.createElement('p');
+    heightElement.innerText = `Height: ${pokemon.height} m`;
+
+    let imageElement = document.createElement('img');
+    imageElement.src = pokemon.imageUrl;
+    imageElement.alt = pokemon.name;
+
+    // Append elements to modal content
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(nameElement);
+    modalContent.appendChild(heightElement);
+    modalContent.appendChild(imageElement);
+
+    // Append modal content to modal
+    modal.appendChild(modalContent);
+
+    // Append modal to modal container
+    modalContainer.appendChild(modal);
+
+    // Display modal
+    modalContainer.style.display = 'block';
+  }
+
+  function closeModal() {
+    modalContainer.style.display = 'none';
   }
 
   function loadList() {
@@ -62,7 +112,6 @@ let pokemonRepository = (function () {
             detailsUrl: item.url,
           };
           add(pokemon);
-          console.log(pokemon);
         });
       })
       .catch(function (e) {

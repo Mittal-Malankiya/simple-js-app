@@ -11,6 +11,11 @@ body {
     margin: 5px;
     padding: 5px;
     cursor: pointer;
+    width: 300px; 
+    height: 40px; 
+    margin: 5px; 
+    padding:5px;
+    align-items: center;
   }
   #modal-container {
     display: none;

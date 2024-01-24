@@ -1,17 +1,17 @@
 /* Add your custom styles here */
 body {
-  background-color: #f2f4eb;
+  background-color: #e5e5e5;
 }
 
 .list-group-item {
-  border:  5px solid #d04e68;
-  color: #000000;
+  border:  5px solid #003566;
+  color: #ffc300;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
   width: 300px; 
   height: 70px; 
-  margin: 5px; 
+  margin: 10px; 
   align-items: center;
   font-size: 20px;
   font-weight: 500;
@@ -22,4 +22,10 @@ body {
   max-width: 100%;
   height: auto;
   margin: 10px 0;
+}
+.modal-title{
+  font-family: 'Moirai One', system-ui;
+font-family: 'Rubik Burned', system-ui;
+font-family: 'Rubik Maps', system-ui;
+color:#70e000
 }

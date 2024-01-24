@@ -29,8 +29,8 @@ let pokemonRepository = (function () {
   });
 
   function showModal(title, text) {
-    const name = document.querySelector("#bootstrapModalLabel");
-    const height = document.querySelector("#modal-height");
+   let name = document.querySelector("#bootstrapModalLabel");
+    let height = document.querySelector("#modal-height");
     name.innerHTML = "";
     height.innerHTML = "";
     name.innerHTML = title;
@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
           let pokemon = {
             name: item.name,
             detailsUrl: item.url,
-            // imageUrl: "",
+            imageUrl: "https://pokeapi.co/api/v2/pokemon/?limit=150",
           };
 
           add(pokemon);

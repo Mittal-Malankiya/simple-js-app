@@ -1,6 +1,6 @@
 let pokemonRepository = (function() {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
 
   function showModal(item) {
       let modalTitle = $(".modal-title");
@@ -77,7 +77,6 @@ let pokemonRepository = (function() {
   };
 })();
 
-// Example usage:
 pokemonRepository.loadList().then(function() {
   let pokemonList = pokemonRepository.getAll();
   pokemonList.forEach(function(pokemon) {
@@ -86,11 +85,11 @@ pokemonRepository.loadList().then(function() {
       listItem.classList.add("list-group-item");
       listItem.innerText = pokemon.name;
 
-      // Add click event to show details in modal
-      listItem.addEventListener("click", function() {
-          pokemonRepository.showDetails(pokemon);
-          $("#exampleModal").modal("show");
-      });
+      // // Add click event to show details in modal
+      // listItem.addEventListener("click", function() {
+      //     pokemonRepository.showDetails(pokemon);
+      //     $("#exampleModal").modal("show");
+      // });
 
       $(".list-group").append(listItem);
   });

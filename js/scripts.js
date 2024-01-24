@@ -1,4 +1,5 @@
-let pokemonRepository = (function() {
+let pokemonRepository = (function() 
+{
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
 
@@ -73,7 +74,7 @@ let pokemonRepository = (function() {
       getAll: getAll,
       loadList: loadList,
       loadDetails: loadDetails,
-      showDetails: showDetails
+      showDetails: showDetails,
   };
 })();
 

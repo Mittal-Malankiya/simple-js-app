@@ -1,21 +1,20 @@
 /* Add your custom styles here */
 body {
-  background-color: #e5e5e5;
+  background-color: #ffffff;
 }
 
 .list-group-item {
-  border:  5px solid #003566;
-  color: #ffc300;
+  color: #000000;
   padding: 10px;
-  border-radius: 10px;
+  text-align: center;
+  border-radius: 15px;
   cursor: pointer;
   width: 300px; 
-  height: 70px; 
+  height: 75px; 
   margin: 10px; 
-  align-items: center;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
-  text-align: center;
+  
 }
 
 .modal-img {
@@ -33,6 +32,18 @@ color:#5bb204
 {
   font-weight: 500;
 }
-abilitiesElement{
-  background-color: #79ec06;
+.list-group{
+  display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 10px;
+justify-content: center;
+}
+.list-group-item:nth-child(odd) {
+  background-color: #f2f0f0; /* Light blue */
+  border: 5px  solid #4b4cb9;
+}
+
+.list-group-item:nth-child(even) {
+  background-color: #f2f0f0; /* Light blue */
+  border:5px solid #ecc735;
 }

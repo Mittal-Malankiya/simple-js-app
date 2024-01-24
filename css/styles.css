@@ -27,5 +27,12 @@ body {
   font-family: 'Moirai One', system-ui;
 font-family: 'Rubik Burned', system-ui;
 font-family: 'Rubik Maps', system-ui;
-color:#70e000
+color:#5bb204
+}
+.modal-content
+{
+  font-weight: 500;
+}
+abilitiesElement{
+  background-color: #79ec06;
 }

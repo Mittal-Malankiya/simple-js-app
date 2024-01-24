@@ -86,10 +86,10 @@ pokemonRepository.loadList().then(function() {
       listItem.innerText = pokemon.name;
 
       // // Add click event to show details in modal
-      // listItem.addEventListener("click", function() {
-      //     pokemonRepository.showDetails(pokemon);
-      //     $("#exampleModal").modal("show");
-      // });
+      listItem.addEventListener("click", function() {
+           pokemonRepository.showDetails(pokemon);
+           $("#exampleModal").modal("show");
+       });
 
       $(".list-group").append(listItem);
   });

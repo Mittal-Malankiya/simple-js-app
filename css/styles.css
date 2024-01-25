@@ -26,7 +26,7 @@ body {
   font-family: 'Moirai One', system-ui;
 font-family: 'Rubik Burned', system-ui;
 font-family: 'Rubik Maps', system-ui;
-color:#5bb204
+color:#5bb204;
 }
 .modal-content
 {
@@ -46,4 +46,10 @@ justify-content: center;
 .list-group-item:nth-child(even) {
   background-color: #f2f0f0; /* Light blue */
   border:5px solid #ecc735;
+}
+p{
+  font-size: 20px;
+  padding: 10;
+  font-weight: 500;
+  color: #ecc735;
 }

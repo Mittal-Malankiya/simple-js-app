@@ -1,14 +1,17 @@
 let pokemonRepository = (function() 
-{
+{ 
+    // Private variables
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
+// Function to show details of a Pokémon in a modal
   function showModal(item) {
       let modalTitle = $(".modal-title");
       let modalBody = $(".modal-body #pokemon-details");
       modalTitle.empty();
       modalBody.empty();
 
+// Creating elements to display Pokémon details in the modal
       let nameElement = $("<h1>" + item.name + "</h1>");
       let imageElementFront = $('<img class="modal-img" style="width: 50%">').attr("src", item.imageUrlFront);
       let imageElementBack = $('<img class="modal-img" style="width: 50%">').attr("src", item.imageUrlBack);
@@ -17,6 +20,7 @@ let pokemonRepository = (function()
       let typesElement = $("<p>" + "Types: " + item.types.join(", ") + "</p>");
       let abilitiesElement = $("<p>" + "Abilities: " + item.abilities.join(", ") + "</p>");
 
+      // Appending elements to the modal
       modalTitle.append(nameElement);
       modalBody.append(imageElementFront);
       modalBody.append(imageElementBack);
@@ -26,14 +30,17 @@ let pokemonRepository = (function()
       modalBody.append(abilitiesElement);
   }
 
+// Function to add a Pokémon to the list
   function add(pokemon) {
       pokemonList.push(pokemon);
   }
 
+// Function to get the list of all Pokémon
   function getAll() {
       return pokemonList;
   }
 
+// Function to fetch and load the Pokémon list from the API
   function loadList() {
       return fetch(apiUrl)
           .then(response => response.json())
@@ -48,7 +55,7 @@ let pokemonRepository = (function()
           })
           .catch(error => console.error(error));
   }
-
+// Function to fetch and load details for a specific Pokémon
   function loadDetails(pokemon) {
       return fetch(pokemon.detailsUrl)
           .then(response => response.json())
@@ -62,13 +69,15 @@ let pokemonRepository = (function()
           })
           .catch(error => console.error(error));
   }
-
+  
+// Function to show details of a Pokémon (loads details and then shows modal)
   function showDetails(pokemon) {
       loadDetails(pokemon).then(function() {
           showModal(pokemon);
       });
   }
 
+// Public API (exposed methods)
   return {
       add: add,
       getAll: getAll,
@@ -78,6 +87,7 @@ let pokemonRepository = (function()
   };
 })();
 
+// Fetch and load the Pokémon list, then create list items for each Pokémon
 pokemonRepository.loadList().then(function() {
   let pokemonList = pokemonRepository.getAll();
   pokemonList.forEach(function(pokemon) {

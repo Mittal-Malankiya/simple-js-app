@@ -1,4 +1,4 @@
-let pokemonRepository = (function() 
+let pokemonRepository = (() =>
 { 
     // Private variables
   let pokemonList = [];
@@ -36,10 +36,8 @@ let pokemonRepository = (function()
   }
 
 // Function to get the list of all Pokémon
-  function getAll() {
-      return pokemonList;
-  }
-
+ let  getAll = () => pokemonList;
+  
 // Function to fetch and load the Pokémon list from the API
   function loadList() {
       return fetch(apiUrl)
@@ -69,10 +67,10 @@ let pokemonRepository = (function()
           })
           .catch(error => console.error(error));
   }
-  
+
 // Function to show details of a Pokémon (loads details and then shows modal)
   function showDetails(pokemon) {
-      loadDetails(pokemon).then(function() {
+      loadDetails(pokemon).then(() =>{
           showModal(pokemon);
       });
   }
@@ -88,16 +86,16 @@ let pokemonRepository = (function()
 })();
 
 // Fetch and load the Pokémon list, then create list items for each Pokémon
-pokemonRepository.loadList().then(function() {
+pokemonRepository.loadList().then(() => {
   let pokemonList = pokemonRepository.getAll();
-  pokemonList.forEach(function(pokemon) {
+  pokemonList.forEach((pokemon) =>{
       // Create list item for each Pokemon
       let listItem = document.createElement("li");
       listItem.classList.add("list-group-item");
       listItem.innerText = pokemon.name;
 
       // // Add click event to show details in modal
-      listItem.addEventListener("click", function() {
+      listItem.addEventListener("click", () =>{
            pokemonRepository.showDetails(pokemon);
            $("#exampleModal").modal("show");
        });

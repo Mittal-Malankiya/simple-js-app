@@ -1,6 +1,6 @@
 # PokeDex App
 
-![Alt Text](2.jpg)
+![alt text](2.png)
 
 ## Table of Contents
 
